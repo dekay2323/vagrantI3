@@ -17,8 +17,6 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder ".", "/vagrant"
     config.vm.provision :shell, :path => "provision.sh"
     config.vm.provision :shell, :path => "provision-dev.sh"
-    config.vm.provision :shell, :inline => "apt-get install -y virtualbox-guest-x11 && reboot"
-
     config.vm.provider "virtualbox" do |vb|
         # Display the VirtualBox GUI when booting the machine
         vb.gui = true
@@ -30,4 +28,5 @@ Vagrant.configure("2") do |config|
         # (available options for audio: "alsa" or "pulse" for Linux host, "dsound" for Windows host, "coreaudio" for Mac OS)
         # vb.customize ["modifyvm", :id, '--audio', 'alsa', '--audiocontroller', 'hda']
     end
+    config.vm.provision :shell, :inline => "apt-get install -y virtualbox-guest-x11 && reboot"
 end

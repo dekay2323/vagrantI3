@@ -3,10 +3,14 @@ echo '--- Update and install'
 username=$SUDO_USER
 userhome=$(getent passwd $SUDO_USER | cut -d: -f6)
 sudo apt-get install -y xserver-xorg slim i3
-sudo apt-get install -y vim-gtk unzip rxvt-unicode-256color xclip feh x11-xserver-utils pulseaudio
+sudo apt-get install -y vim-gtk unzip zip rxvt-unicode-256color xclip feh x11-xserver-utils pulseaudio
 sudo apt-get install -y fonts-inconsolata xfonts-terminus xfonts-terminus-oblique
 sudo apt-get install -y firefox
-sudo apt-get install -y zip
+
+echo '--- Update Upgrade'
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get autoremove -y
 
 echo '--- configure autorun'
 echo 'setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,ru,ua' > "${userhome}/.xsession"
