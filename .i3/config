@@ -3,6 +3,8 @@
 
 set $mod Mod1
 
+exec --no-startup-id vmware-user
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 font -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
@@ -154,9 +156,3 @@ bar {
     position bottom
     status_command i3status
 }
-
-workspace_layout tabbed
-assign [class="Skype"] 1
-for_window [class="Skype" title="for Linux$"] floating enable
-# Start skype, chrome browser and terminal
-exec --no-startup-id i3-msg 'workspace 1;exec --no-startup-id skype;workspace 2;exec google-chrome-stable;exec urxvt'

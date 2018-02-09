@@ -7,6 +7,9 @@ sudo apt-get install -y vim-gtk unzip zip rxvt-unicode-256color xclip feh x11-xs
 sudo apt-get install -y fonts-inconsolata xfonts-terminus xfonts-terminus-oblique
 sudo apt-get install -y firefox
 
+echo '--- ncurses'
+sudo apt-get install -y finch mc
+
 echo '--- Update Upgrade'
 sudo apt-get update -y
 sudo apt-get upgrade -y
