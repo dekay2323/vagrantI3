@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder ".", "/vagrant"
     config.vm.provision :shell, :path => "provision.sh"
     config.vm.provision :shell, :path => "provision-dev.sh"
+    config.vm.provision :shell, :path => "provision-dk.sh"
     config.vm.provider "virtualbox" do |vb|
         # Display the VirtualBox GUI when booting the machine
         vb.gui = true

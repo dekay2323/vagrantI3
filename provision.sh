@@ -5,7 +5,12 @@ userhome=$(getent passwd $SUDO_USER | cut -d: -f6)
 sudo apt-get install -y xserver-xorg slim i3
 sudo apt-get install -y vim-gtk unzip zip rxvt-unicode-256color xclip feh x11-xserver-utils pulseaudio
 sudo apt-get install -y fonts-inconsolata xfonts-terminus xfonts-terminus-oblique
+sudo apt-get install -y ncdu glances
 sudo apt-get install -y firefox
+
+echo '--- Create Directories'
+mkdir development
+mkdir download
 
 echo '--- ncurses'
 sudo apt-get install -y finch mc
@@ -27,7 +32,6 @@ cp /vagrant/.i3status.conf "${userhome}/.i3status.conf"
 cp /vagrant/.Xresources  "${userhome}/.Xresources"
 cp -r /vagrant/background/ "${userhome}/background/"
 chown -R ${username}:${username} "${userhome}/.xsession" "${userhome}/.i3/" "${userhome}/.i3status.conf" "${userhome}/.Xresources" "${userhome}/background/"
-
 
 echo '--- put this tasty command prompt into .bashrc'
 #PS1='\[\033[01;30m\]\t \[\e[0;36m\]\u\[\e[m\]@\[\033[00;32m\]\h\[\033[00;37m\]:\[\033[31m\]$(__git_ps1 "(%s)\[\033[01m\]")\[\033[0;34m\]\w\[\033[00m\] $ '
