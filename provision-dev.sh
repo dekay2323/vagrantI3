@@ -26,8 +26,8 @@ fi
 cp /home/vagrant/intellijSettings.jar "${userhome}/download/"
 cd ..
 
-echo '--- Git USer'
+echo '--- Git User'
 git config --global core.precomposeunicode true
 git config --global user.name "Demian Krige"
 git config --global user.email demian.krige@stratahealth.com
-ssh-keygen -t rsa -C "demian.krige@stratahealth.com" -q -N ""
+ssh-keygen -t rsa -C "demian.krige@stratahealth.com" -q -P ""

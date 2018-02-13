@@ -11,4 +11,3 @@ This project uses [VirtualBox](https://www.virtualbox.org/) as a default backend
 
 To shut down the virtual machine run `vagrant halt`.
 To remove virtual machine hard disk from your system run `vagrant destroy`.
-
